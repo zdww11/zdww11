@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Spring 注解开发 笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Spring 注解开发 笔记 注解用于创建对象： 他们的作用和XML配置文件中编写的标签实现的功能是一样的。  Component:    ​             作用：用于把当前类对象存入spring容器中。 ​             属性： value  用于指定bean的id，当我们不写时默认为方法名首字母小写。 @Component publiv class AccountServi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring 注解开发 笔记">
+<meta property="og:url" content="http://yoursite.com/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spring 注解开发 笔记 注解用于创建对象： 他们的作用和XML配置文件中编写的标签实现的功能是一样的。  Component:    ​             作用：用于把当前类对象存入spring容器中。 ​             属性： value  用于指定bean的id，当我们不写时默认为方法名首字母小写。 @Component publiv class AccountServi">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="f:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_194753.png">
+<meta property="og:image" content="f:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195149.png">
+<meta property="og:image" content="f:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195454.png">
+<meta property="article:published_time" content="2020-05-08T12:05:20.269Z">
+<meta property="article:modified_time" content="2020-05-08T12:05:20.272Z">
 <meta property="article:author" content="东南风">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="f:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_194753.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,265 +160,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Spring 注解开发 笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Spring 注解开发 笔记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+
+        
+        <a href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2020-05-08T12:05:20.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/">Spring 注解开发 笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-注解开发-笔记"><a href="#Spring-注解开发-笔记" class="headerlink" title="Spring 注解开发 笔记"></a>Spring 注解开发 笔记</h1><ol>
+<li>注解用于创建对象： 他们的作用和XML配置文件中编写的<bean>标签实现的功能是一样的。</li>
+</ol>
+<p>Component:   </p>
+<p>​             作用：用于把当前类对象存入spring容器中。</p>
+<p>​             属性： value  用于指定bean的id，当我们不写时默认为方法名首字母小写。</p>
+<p><code>@Component</code></p>
+<p><code>publiv class AccountServiceImpl  implements IAccountService{</code></p>
+<p><code>}</code></p>
+<p>小面这三个注解作用跟Component一样 ，但是它是Spring为我们提供的三层架构使用的，这样代码更清晰。</p>
+<p>Controller: 作用于表现层，  Service：业务层， Repository:持久层。</p>
+<ol start="2">
+<li><p>注解注入数据：</p>
+<p>Aotuwired: 自动按照类型注入，只要容器中有唯一的bean对象类型和要注入的变量类型匹配杰可以注入。  出现位置;可以是变量上或者方法上。  细节-》在使用注解注入时，set方法就不是必须的。</p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_194753.png" alt="screenshot_20200508_194753"></p>
+</li>
+</ol>
+<p>Qualifier: 在按照类中注入的基础上再按照名称注入。它给类成员注入时不能单独使用，但是对方法参数注入时可以。</p>
+<p>属性： value：用于指定注入的bean的id。<img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195149.png" alt="screenshot_20200508_195149"></p>
+<p>Resource：直接按照bean对象注入，可以独立使用。 但是属性值是name–用于指定bean的id。<img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195454.png" alt="screenshot_20200508_195454"></p>
+<p>以上三种都只能用于引用类型的注入，而基本类型和String类型不能使用它们， 集合类型的注入只能用xml配置实现。</p>
+<p>Value： 用于基本类型和String类型的注入。 属性值value-&gt;指定注入的值，而且可以用SpEL表达式。  ${表达式}。</p>
+<ol start="3">
+<li>注解用于指定范围 ： Scope，指定bean作用的范围，属性值value：给定范围值。一般用singleton （单例） \ prototype.（多例）。</li>
+</ol>
+<ol start="4">
+<li><p>了解 生命周期注解。</p>
+<p>a. PostConstruct  初始化方法， PreDetroy 销毁方法。</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-05-04T13:05:35.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring 学习记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Spring 学习记录</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/04/Mybatis%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-05-04T12:58:33.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/04/Mybatis%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">Mybatis 注解开发</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/30/%E6%97%85%E6%B8%B8%E7%BD%91--%E7%AE%80%E5%8C%96Servlet%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84java.lang.NoSuchMethodException%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E3%80%82/" class="archive-article-date">
-  	<time datetime="2020-04-30T08:11:14.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/30/%E6%97%85%E6%B8%B8%E7%BD%91--%E7%AE%80%E5%8C%96Servlet%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84java.lang.NoSuchMethodException%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E3%80%82/">旅游网--简化Servlet后出现的java.lang.NoSuchMethodException的问题思考和解决方法。</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/%E5%BC%BA%E5%BA%94%E7%94%A8%EF%BC%8C%E5%BC%B1%E5%BA%94%E7%94%A8%EF%BC%8C%E8%BD%AF%E5%BA%94%E7%94%A8%E3%80%81%E5%B9%BB%E8%B1%A1%E5%BA%94%E7%94%A8%E5%8C%BA%E5%88%AB%E3%80%82/" class="archive-article-date">
-  	<time datetime="2020-04-28T15:09:10.903Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/%E5%BC%BA%E5%BA%94%E7%94%A8%EF%BC%8C%E5%BC%B1%E5%BA%94%E7%94%A8%EF%BC%8C%E8%BD%AF%E5%BA%94%E7%94%A8%E3%80%81%E5%B9%BB%E8%B1%A1%E5%BA%94%E7%94%A8%E5%8C%BA%E5%88%AB%E3%80%82/">强应用，弱应用，软应用、幻象应用区别。</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/Mybatis%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-04-28T14:12:49.825Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/Mybatis%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">Mybatis 学习记录（2）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/Mybatis%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-04-28T13:46:00.551Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/Mybatis%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Mybatis 学习记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/26/Exception%20%E5%92%8C%20Error%E5%8C%BA%E5%88%AB%E8%AE%A4%E8%AF%86%E3%80%82/" class="archive-article-date">
-  	<time datetime="2020-04-26T14:16:05.486Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/26/Exception%20%E5%92%8C%20Error%E5%8C%BA%E5%88%AB%E8%AE%A4%E8%AF%86%E3%80%82/">Exception 和 Error区别认识。</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/25/Java-day1%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" class="archive-article-date">
-  	<time datetime="2020-04-25T00:59:03.933Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/25/Java-day1%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">Java-day1知识体系</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -433,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

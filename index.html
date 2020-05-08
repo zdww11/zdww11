@@ -154,6 +154,321 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Spring 注解开发 笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/">Spring 注解开发 笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-05-08T12:05:20.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-注解开发-笔记"><a href="#Spring-注解开发-笔记" class="headerlink" title="Spring 注解开发 笔记"></a>Spring 注解开发 笔记</h1><ol>
+<li>注解用于创建对象： 他们的作用和XML配置文件中编写的<bean>标签实现的功能是一样的。</li>
+</ol>
+<p>Component:   </p>
+<p>​             作用：用于把当前类对象存入spring容器中。</p>
+<p>​             属性： value  用于指定bean的id，当我们不写时默认为方法名首字母小写。</p>
+<p><code>@Component</code></p>
+<p><code>publiv class AccountServiceImpl  implements IAccountService{</code></p>
+<p><code>}</code></p>
+<p>小面这三个注解作用跟Component一样 ，但是它是Spring为我们提供的三层架构使用的，这样代码更清晰。</p>
+<p>Controller: 作用于表现层，  Service：业务层， Repository:持久层。</p>
+<ol start="2">
+<li><p>注解注入数据：</p>
+<p>Aotuwired: 自动按照类型注入，只要容器中有唯一的bean对象类型和要注入的变量类型匹配杰可以注入。  出现位置;可以是变量上或者方法上。  细节-》在使用注解注入时，set方法就不是必须的。</p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_194753.png" alt="screenshot_20200508_194753"></p>
+</li>
+</ol>
+<p>Qualifier: 在按照类中注入的基础上再按照名称注入。它给类成员注入时不能单独使用，但是对方法参数注入时可以。</p>
+<p>属性： value：用于指定注入的bean的id。<img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195149.png" alt="screenshot_20200508_195149"></p>
+<p>Resource：直接按照bean对象注入，可以独立使用。 但是属性值是name–用于指定bean的id。<img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200508_195454.png" alt="screenshot_20200508_195454"></p>
+<p>以上三种都只能用于引用类型的注入，而基本类型和String类型不能使用它们， 集合类型的注入只能用xml配置实现。</p>
+<p>Value： 用于基本类型和String类型的注入。 属性值value-&gt;指定注入的值，而且可以用SpEL表达式。  ${表达式}。</p>
+<ol start="3">
+<li>注解用于指定范围 ： Scope，指定bean作用的范围，属性值value：给定范围值。一般用singleton （单例） \ prototype.（多例）。</li>
+</ol>
+<ol start="4">
+<li><p>了解 生命周期注解。</p>
+<p>a. PostConstruct  初始化方法， PreDetroy 销毁方法。</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/08/Spring%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%20%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Spring 学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Spring 学习记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-05-04T13:05:35.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-学习记录"><a href="#Spring-学习记录" class="headerlink" title="Spring 学习记录"></a>Spring 学习记录</h1><ol>
+<li><p>Spring 是一款full-stack轻量级开源框架，以IoC反转控制和AOP面向切面编程的开源框架。 </p>
+<p>a. 优点是 方便解耦，简化开发。</p>
+<p>b. AOP编程的支持。</p>
+<p>c. 声明式事物支持，方便程序测试，集成各种优秀框架和降低API使用难度。</p>
+</li>
+</ol>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5CSpring%5Cscreenshot_20200504_210426.png" alt="screenshot_20200504_210426"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/04/Spring%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Mybatis 注解开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/04/Mybatis%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">Mybatis 注解开发</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/04/Mybatis%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2020-05-04T12:58:33.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mybatis-注解开发"><a href="#Mybatis-注解开发" class="headerlink" title="Mybatis 注解开发"></a>Mybatis 注解开发</h1><ol>
+<li><p>什么是延迟加载<img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_203735.png" alt="screenshot_20200504_203735"></p>
+</li>
+<li><p>注解 开发—-常用注解说明</p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_204324.png" alt="screenshot_20200504_204324"></p>
+<p> <img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_204735.png" alt="screenshot_20200504_204735"></p>
+</li>
+<li><p>配置SqlMapConfig的xml</p>
+<p>``</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;!-- 引入外部配置文件--&gt;</span><br><span class="line">    &lt;properties resource="jdbcConfig.properties"&gt;&lt;/properties&gt;</span><br><span class="line">    &lt;!--配置别名--&gt;</span><br><span class="line">    &lt;typeAliases&gt;</span><br><span class="line">        &lt;package name="com.itheima.domain"&gt;&lt;/package&gt;</span><br><span class="line">    &lt;/typeAliases&gt;</span><br><span class="line">    &lt;!-- 配置环境--&gt;</span><br><span class="line">    &lt;environments <span class="keyword">default</span>=<span class="string">"mysql"</span>&gt;</span><br><span class="line">        &lt;environment id=<span class="string">"mysql"</span>&gt;</span><br><span class="line">            &lt;transactionManager type="JDBC"&gt;&lt;/transactionManager&gt;</span><br><span class="line">            &lt;dataSource type=<span class="string">"POOLED"</span>&gt;</span><br><span class="line">                &lt;property name="driver" value="$&#123;jdbc.driver&#125;"&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name="url" value="$&#123;jdbc.url&#125;"&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name="username" value="$&#123;jdbc.username&#125;"&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name="password" value="$&#123;jdbc.password&#125;"&gt;&lt;/property&gt;</span><br><span class="line">            &lt;/dataSource&gt;</span><br><span class="line">        &lt;/environment&gt;</span><br><span class="line">    &lt;/environments&gt;</span><br><span class="line">    &lt;!-- 指定带有注解的dao接口所在位置 --&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">        &lt;package name="com.itheima.dao"&gt;&lt;/package&gt;</span><br><span class="line">    &lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mapper 这里有两种配置方式：<img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_205609.png" alt="screenshot_20200504_205609"></p>
+</li>
+<li><p>复杂关系映射的注解说明：<img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_205739.png" alt="screenshot_20200504_205739"></p>
+</li>
+</ol>
+<p>​      </p>
+<p>​        <img src="F:%5C%E6%88%AA%E5%9B%BE%5CMybatis%20zhujie%5Cscreenshot_20200504_205754.png" alt="screenshot_20200504_205754"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/04/Mybatis%20%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-旅游网--简化Servlet后出现的java.lang.NoSuchMethodException的问题思考和解决方法。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/30/%E6%97%85%E6%B8%B8%E7%BD%91--%E7%AE%80%E5%8C%96Servlet%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84java.lang.NoSuchMethodException%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E3%80%82/">旅游网--简化Servlet后出现的java.lang.NoSuchMethodException的问题思考和解决方法。</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/30/%E6%97%85%E6%B8%B8%E7%BD%91--%E7%AE%80%E5%8C%96Servlet%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84java.lang.NoSuchMethodException%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E3%80%82/" class="archive-article-date">
+  	<time datetime="2020-04-30T08:11:14.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="旅游网–简化Servlet后出现的java-lang-NoSuchMethodException-的问题思考和解决方法。"><a href="#旅游网–简化Servlet后出现的java-lang-NoSuchMethodException-的问题思考和解决方法。" class="headerlink" title="旅游网–简化Servlet后出现的java.lang.NoSuchMethodException:的问题思考和解决方法。"></a>旅游网–简化Servlet后出现的java.lang.NoSuchMethodException:的问题思考和解决方法。</h1><ol>
+<li>问题出现的地方如下：<img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_112253.png" alt="screenshot_20200430_112253"></li>
+</ol>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_154951.png" alt="screenshot_20200430_154951"></p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_155156.png" alt="screenshot_20200430_155156"></p>
+<p>–&gt;userservlet 继承 baseservelt 继承 httpservlet的关系。重写baseservlet的service方法利用反射机制实现userservlet中的方法。 这就可能造成响应给html的流受到影响==具体问题点，我目前还不能分析出来，只能用简单的方法去重新完成超链接的定向，希望自己在后面慢慢发掘更深层次的东西。      </p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_155308.png" alt="screenshot_20200430_155308"></p>
+<ol start="2">
+<li>解决方法：<img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_155704.png" alt=""></li>
+</ol>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200430_155611.png" alt="screenshot_20200430_155611"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/30/%E6%97%85%E6%B8%B8%E7%BD%91--%E7%AE%80%E5%8C%96Servlet%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84java.lang.NoSuchMethodException%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E3%80%82/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-强应用，弱应用，软应用、幻象应用区别。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -238,7 +553,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Mybatis-学习记录（2）"><a href="#Mybatis-学习记录（2）" class="headerlink" title="Mybatis 学习记录（2）"></a>Mybatis 学习记录（2）</h1><ol>
-<li><p><img src="https://zdww11.github.io/zdww11/images/master/img/screenshot_20200428_215244.png" alt="screenshot_20200428_215244"></p>
+<li><p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200428_215244.png" alt="screenshot_20200428_215244"></p>
 </li>
 <li><p>设计者模式分析：</p>
 <ul>
@@ -323,6 +638,8 @@
 <p><img src="F:/%E6%88%AA%E5%9B%BE/screenshot_20200428_214755.png" alt=""></p>
 <p>方法b：打开idea 的 file -&gt;setting </p>
 <p><img src="F:/%E6%88%AA%E5%9B%BE/screenshot_20200428_214942.png" alt="screenshot_20200428_214942"></p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200429_150821.png" alt="screenshot_20200429_150821"></p>
+<p><img src="F:%5C%E6%88%AA%E5%9B%BE%5Cscreenshot_20200429_150854.png" alt="screenshot_20200429_150854"></p>
 <p>这样就解决了！</p>
 
       
